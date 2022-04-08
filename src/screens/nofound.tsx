@@ -1,19 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Styles404Container, Styles404Titulo, Styles404Text } from '../styles/styles';
 
+import {useDimensions} from "../hooks/useDimensions";
+
 const NofoundPage = () => {
 
-    const [windowHeight, setWindowHeight] = useState(0);
-    
-    let resizeWindow = () => {
-      setWindowHeight(window.innerHeight);
-    };
-
-    useEffect(() => {
-      resizeWindow();
-      window.addEventListener("resize", resizeWindow);
-      return () => window.removeEventListener("resize", resizeWindow);
-    }, []);
+    const { windowHeight } = useDimensions();
 
     return(
         <Styles404Container windowHeight={windowHeight - 30}>

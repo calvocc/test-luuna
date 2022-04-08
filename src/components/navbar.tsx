@@ -1,6 +1,6 @@
 import {Navbar, Nav, Container} from "react-bootstrap";
 import { Outlet, useMatch, useResolvedPath } from "react-router-dom";
-import {BsBox, BsPerson} from 'react-icons/bs';
+import {BsGithub, BsPerson} from 'react-icons/bs';
 import { StylesNavbar, StyleBrand, StyleNavLink } from '../styles/styles';
 
 import { LinkProps } from "react-router-dom";
@@ -24,10 +24,10 @@ const NavbarComponent = () => {
                 <Container fluid>
                     <Navbar.Toggle/>
                     <Navbar.Collapse className="justify-content-between">
-                    <StyleBrand>C</StyleBrand>
+                    <StyleBrand>Z</StyleBrand>
                     <Nav>
-                        <CustomLink to={ROUTES.REPOSITORIES}><BsBox/> Repositorios</CustomLink>
-                        <CustomLink to={ROUTES.USERS}><BsPerson /> Usuarios</CustomLink>
+                        <CustomLink to={ROUTES.REPOSITORIES}><BsGithub/> Repositories</CustomLink>
+                        <CustomLink to={ROUTES.USERS}><BsPerson /> Uers</CustomLink>
                     </Nav>
                     </Navbar.Collapse>
                 </Container>

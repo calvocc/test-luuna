@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled, { ThemeConsumer } from 'styled-components';
 import { Link } from 'react-router-dom';
-import {Navbar, Nav, Button, Col, Row, Table} from "react-bootstrap";
+import { Navbar, Container, Form } from "react-bootstrap";
 
-type Props = {
+type HeightProps = {
     windowHeight: number;
 }
 
@@ -10,10 +10,14 @@ type CurrentProps = {
     current : boolean;
 }
 
-export const StyleGeneral = styled.div<Props>`
+type ImgProps = {
+    imgUrl: string;
+}
+
+export const StyleGeneral = styled.div<HeightProps>`
     background-color: ${props => props.theme.backgroundColor};
     min-height: ${props => props.windowHeight}px;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
     position: relative;
 `
 export const StylesFooter = styled.div`
@@ -35,7 +39,7 @@ export const StylesFooterTexto = styled.p`
     margin-bottom: 0px;
     white-space: pre;
 `
-export const Styles404Container = styled.div<Props>`
+export const Styles404Container = styled.div<HeightProps>`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -109,14 +113,69 @@ export const StyleNavLink = styled(Link)<CurrentProps>`
         background-color: ${props => props.theme.secondaryActiveColor};
     }
 `
-export const StylesTitulo = styled.h1`
-    color: ${props => props.theme.tittleColor};
-    font-weight: bold;
-    font-size: 16px;
-    margin-bottom: 20px;
-    margin-top: 20px;    
+export const StyledContainerSearch = styled(Container)`
+    position: relative;
+    z-index: 5;
+    margin-bottom: 50px;
+    margin-top: 50px;
 `
-export const StylesTituloCajaInfo = styled.p<Props>`
+export const StylesSearchContent = styled.div<ImgProps>`
+    background-color: ${props => props.theme.whiteColor};
+    background-image: ${props => props.imgUrl ? props.imgUrl : ''};
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 400px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    &::before{
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: ${props => props.theme.blackColor};
+        opacity: 0.9;
+        z-index: 1;
+    }
+`
+
+export const StylesSearchDivisor = styled.div<ImgProps>`
+    background-image: ${props => props.imgUrl ? props.imgUrl : ''};
+    background-size: cover;
+    background-position: center top;
+    height: 150px;
+    width: 100%;
+    z-index: 2;
+    transform: rotateY(180deg);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+`
+
+export const StylesTitulo = styled.h1`
+    color: ${props => props.theme.whiteColor};
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 20px;
+    margin-top: 20px;   
+    text-align: center;
+`
+export const StylesTituloCuerpo = styled.h3`
+    color: ${props => props.theme.primaryColor};
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 0px;
+    margin-top: 20px;   
+    text-align: left;
+`
+export const StylesTituloCajaInfo = styled.p<HeightProps>`
     color: ${props => props.theme.tittleColor};
     font-weight: bold;
     font-size: 14px;
@@ -136,18 +195,29 @@ export const StylesCajaInfo = styled.div`
     margin-bottom: 5px;
 `
 
-export const StylesBtnVerde = styled(Button)`
-    background-color: ${props => props.theme.secondaryColor};
-    color: ${props => props.theme.whiteColor};
+export const StylesBtnVerde = styled.a`
+    background-color: ${props => props.theme.borderColor};
+    color: ${props => props.theme.blackColor};
     border-color: ${props => props.theme.secondaryColor};
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
     padding-left: 20px;
     padding-right: 20px;
     max-height: 40px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     &:hover{
         background-color: ${props => props.theme.secondaryActiveColor};
         border-color: ${props => props.theme.secondaryActiveColor};
+        color: ${props => props.theme.whiteColor}
     }
     @media screen and (max-width: 600px) {
         margin-top: 20px;
@@ -157,7 +227,7 @@ export const StylesBtnVerde = styled(Button)`
     }
 `
 
-export const StylesContentSpinner = styled.div<Props>`
+export const StylesContentSpinner = styled.div<HeightProps>`
     width: 100%;
     height: ${props => props.windowHeight}px;
     display: flex;
@@ -166,6 +236,54 @@ export const StylesContentSpinner = styled.div<Props>`
 `
 
 export const StyleNoData = styled.div`
-    background-color: ${props => props.theme.whiteColor};;
+    background-color: ${props => props.theme.whiteColor};
     color: ${props => props.theme.textColor};
+`
+
+export const StyleCajaUser = styled.div`
+    background-color: ${props => props.theme.whiteColor};
+    padding: 10px 10px 30px 10px;
+    border-radius: 8px;
+    margin-top: 60px;
+    position: relative;
+    box-shadow: 1px 1px 1px ${props => props.theme.borderColor};
+`
+export const StyleCajaUserContentImg = styled.div`
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+    margin-top: -45px;
+    background-color: ${props => props.theme.whiteColor};
+    border: 1px solid ${props => props.theme.borderColor};
+    outline: 5px solid ${props => props.theme.whiteColor};
+    margin: -45px auto 10px auto;
+`
+export const StyleCajaUserImg = styled.img`
+    width: 80px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+`
+export const StyleCajaNombre = styled.p`
+    color: ${props => props.theme.primaryColor};
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    small{
+        font-size: 12px;
+        line-height: 12px;
+        color: ${props => props.theme.textColor};
+        display: block;
+    }
+`
+export const StyleInput = styled(Form.Control)`
+    outline: 5px solid rgba(255,255,255, 0.3);
+    border-color: ${props => props.theme.whiteColor};
+    &:focus{
+        outline: 5px solid rgba(255,255,255, 0.3);
+    }
 `
