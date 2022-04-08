@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/test-luuna/static/css/main.e0f8022f.css",
-    "main.js": "/test-luuna/static/js/main.a37fd416.js",
-    "static/js/787.338f639b.chunk.js": "/test-luuna/static/js/787.338f639b.chunk.js",
-    "static/media/stock-photo-server-room-d-illustration-with-node-base-programming-data-design-element-concept-of-big-data-1024337071.jpeg": "/test-luuna/static/media/stock-photo-server-room-d-illustration-with-node-base-programming-data-design-element-concept-of-big-data-1024337071.e773c9f737264aa34db6.jpeg",
-    "static/media/divisor.svg": "/test-luuna/static/media/divisor.0cb1ebd85b824ee597b6982544e0162d.svg",
-    "index.html": "/test-luuna/index.html",
-    "main.e0f8022f.css.map": "/test-luuna/static/css/main.e0f8022f.css.map",
-    "main.a37fd416.js.map": "/test-luuna/static/js/main.a37fd416.js.map",
-    "787.338f639b.chunk.js.map": "/test-luuna/static/js/787.338f639b.chunk.js.map"
+    "main.css": "/static/css/main.e0f8022f.css",
+    "main.js": "/static/js/main.4304f915.js",
+    "static/js/787.338f639b.chunk.js": "/static/js/787.338f639b.chunk.js",
+    "static/media/stock-photo-server-room-d-illustration-with-node-base-programming-data-design-element-concept-of-big-data-1024337071.jpeg": "/static/media/stock-photo-server-room-d-illustration-with-node-base-programming-data-design-element-concept-of-big-data-1024337071.e773c9f737264aa34db6.jpeg",
+    "static/media/divisor.svg": "/static/media/divisor.0cb1ebd85b824ee597b6982544e0162d.svg",
+    "index.html": "/index.html",
+    "main.e0f8022f.css.map": "/static/css/main.e0f8022f.css.map",
+    "main.4304f915.js.map": "/static/js/main.4304f915.js.map",
+    "787.338f639b.chunk.js.map": "/static/js/787.338f639b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e0f8022f.css",
-    "static/js/main.a37fd416.js"
+    "static/js/main.4304f915.js"
   ]
 }
