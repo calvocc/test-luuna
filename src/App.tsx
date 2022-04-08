@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import { HashRouter, Routes, Route, } from "react-router-dom";
 import { ThemeProvider } from 'styled-components';
 import { ToastContainer } from 'react-toastify';
 
@@ -25,7 +25,7 @@ function App() {
     <ThemeProvider theme={lightTheme}>
       <UserProvider>
         <StyleGeneral windowHeight={windowHeight}>
-          <BrowserRouter>
+          <HashRouter>
             <Routes>
               <Route path={ROUTES.USERS} element={<NavbarComponent />} >
                 <Route path={ROUTES.USERS} element={<UsersPage />} />
@@ -33,7 +33,7 @@ function App() {
               </Route>
               <Route path="*" element={<NofoundPage />} />
             </Routes>
-          </BrowserRouter>
+          </HashRouter>
           <FooterComponen />
         </StyleGeneral>
       </UserProvider>
