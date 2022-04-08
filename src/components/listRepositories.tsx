@@ -2,16 +2,9 @@ import { useContext } from 'react';
 import { Col } from 'react-bootstrap';
 
 import { UserContext } from '../context/userContext';
+import {itemProp} from '../interfaces/interfaces';
 
-import { StyleCajaUser, StyleCajaUserContentImg, StyleCajaUserImg, StyleCajaNombre, StylesBtnVerde } from '../styles/styles';
-
-interface itemProp {
-    name: string;
-    html_url: string;
-    owner: {
-        login: string;
-    }
-}
+import { StyleCajaUser, StyleCajaNombre, StylesBtnVerde } from '../styles/styles';
 
 export const ListItems = () => {
 

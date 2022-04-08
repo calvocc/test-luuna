@@ -1,12 +1,8 @@
 import { useReducer } from "react";
 
-import { UserState } from '../interfaces/interfaces';
+import { UserState, props } from '../interfaces/interfaces';
 import { UserContext } from "./userContext";
 import { UserReducer } from "./userReducer";
-
-interface props {
-    children: JSX.Element | JSX.Element[];
-}
 
 const INITIAL_STATE: UserState = {
     total_count: 0,
